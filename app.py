@@ -7,9 +7,6 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-from keep_alive import keep_alive
-keep_alive()
-
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 WATCHLIST_FILE = "watchlist.json"
 CHECK_INTERVAL = 20  # minutes
@@ -162,3 +159,4 @@ threading.Thread(target=run_scheduler, args=(app, ), daemon=True).start()
 
 if __name__ == "__main__":
     app.run_polling()
+
